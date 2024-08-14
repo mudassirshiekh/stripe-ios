@@ -111,9 +111,10 @@ public extension PaymentSheet {
                 setupFutureUsage: SetupFutureUsage? = nil,
                 /// - Seealso: https://stripe.com/docs/api/payment_intents/create#create_payment_intent-capture_method
                 captureMethod: CaptureMethod = .automatic,
-                /// Callback to determine whether to display the CVC recollection form
+                /// If true, presents CVC recollection form for saved payment methods
+                /// - Seealso: https://docs.stripe.com/payments/accept-a-payment-deferred?platform=ios&type=payment&integration=paymentsheet-flowcontroller#ios-cvc-recollection
                 /// Note: Server-side confirmation is not supported.
-                isCVCRecollectionEnabled: Bool = false
+                requireCVCRecollection: Bool = false
             )
             /// Use this if your integration creates a SetupIntent
             case setup(
