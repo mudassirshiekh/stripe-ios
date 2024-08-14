@@ -13,7 +13,7 @@ struct PaymentSheetDeferredValidator {
     static func validate(paymentIntent: STPPaymentIntent,
                          intentConfiguration: PaymentSheet.IntentConfiguration,
                          isFlowController: Bool) throws {
-        guard case let .payment(_, currency, setupFutureUsage, captureMethod) = intentConfiguration.mode else {
+        guard case let .payment(_, currency, setupFutureUsage, captureMethod, _) = intentConfiguration.mode else {
             throw PaymentSheetError.deferredIntentValidationFailed(message: "You returned a PaymentIntent client secret but used a PaymentSheet.IntentConfiguration in setup mode.")
         }
         guard paymentIntent.currency.uppercased() == currency.uppercased() else {

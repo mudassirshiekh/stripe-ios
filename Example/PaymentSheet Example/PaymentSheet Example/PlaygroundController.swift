@@ -203,25 +203,21 @@ class PlaygroundController: ObservableObject {
         let confirmHandler: PaymentSheet.IntentConfiguration.ConfirmHandler = { [weak self] in
             self?.confirmHandler($0, $1, $2)
         }
-        let isCVCRecollectionEnabledCallback = { [weak self] in
-            return self?.settings.requireCVCRecollection == .on
-        }
+        let isCVCRecollectionEnabled: Bool = self.settings.requireCVCRecollection == .on
         switch settings.mode {
         case .payment:
             return PaymentSheet.IntentConfiguration(
-                mode: .payment(amount: amount!, currency: settings.currency.rawValue, setupFutureUsage: nil),
+                mode: .payment(amount: amount!, currency: settings.currency.rawValue, setupFutureUsage: nil, isCVCRecollectionEnabled: isCVCRecollectionEnabled),
                 paymentMethodTypes: paymentMethodTypes,
                 paymentMethodConfigurationId: settings.paymentMethodConfigurationId,
-                confirmHandler: confirmHandler,
-                isCVCRecollectionEnabledCallback: isCVCRecollectionEnabledCallback
+                confirmHandler: confirmHandler
             )
         case .paymentWithSetup:
             return PaymentSheet.IntentConfiguration(
-                mode: .payment(amount: amount!, currency: settings.currency.rawValue, setupFutureUsage: .offSession),
+                mode: .payment(amount: amount!, currency: settings.currency.rawValue, setupFutureUsage: .offSession, isCVCRecollectionEnabled: isCVCRecollectionEnabled),
                 paymentMethodTypes: paymentMethodTypes,
                 paymentMethodConfigurationId: settings.paymentMethodConfigurationId,
-                confirmHandler: confirmHandler,
-                isCVCRecollectionEnabledCallback: isCVCRecollectionEnabledCallback
+                confirmHandler: confirmHandler
             )
         case .setup:
             return PaymentSheet.IntentConfiguration(
