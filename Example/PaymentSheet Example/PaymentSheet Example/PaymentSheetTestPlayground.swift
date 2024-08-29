@@ -87,6 +87,12 @@ struct PaymentSheetTestPlayground: View {
                                 .sheet(isPresented: $showingQRSheet, content: {
                                     QRView(url: playgroundController.settings.base64URL)
                                 })
+                            Button {
+                                playgroundController.didTapSubscribe()
+                            } label: {
+                                Text("Subscribe")
+                                    .font(.callout.smallCaps())
+                            }.buttonStyle(.bordered)
                         }
                         SettingView(setting: $playgroundController.settings.mode)
                         SettingPickerView(setting: $playgroundController.settings.integrationType)

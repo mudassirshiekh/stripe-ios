@@ -14,7 +14,7 @@ import Contacts
 import PassKit
 @_spi(STP) import StripeCore
 @_spi(STP) import StripePayments
-@_spi(CustomerSessionBetaAccess) @_spi(EarlyAccessCVCRecollectionFeature) @_spi(STP) @_spi(PaymentSheetSkipConfirmation) @_spi(ExperimentalAllowsRemovalOfLastSavedPaymentMethodAPI) @_spi(ExperimentalPaymentMethodLayoutAPI) import StripePaymentSheet
+@_spi(MobilePaymentElementEventsBeta) @_spi(CustomerSessionBetaAccess) @_spi(EarlyAccessCVCRecollectionFeature) @_spi(STP) @_spi(PaymentSheetSkipConfirmation) @_spi(ExperimentalAllowsRemovalOfLastSavedPaymentMethodAPI) @_spi(ExperimentalPaymentMethodLayoutAPI) import StripePaymentSheet
 import SwiftUI
 import UIKit
 
@@ -365,6 +365,16 @@ class PlaygroundController: ObservableObject {
         let navController = UINavigationController(rootViewController: endpointSelector)
         rootViewController.present(navController, animated: true, completion: nil)
     }
+    func didTapSubscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(mobilePaymentElementNotification(notification:)),
+                                               name: .mobilePaymentElement, object: nil)
+    }
+    @objc
+    func mobilePaymentElementNotification(notification: NSNotification) {
+        print("MPE notification: \(notification)")
+    }
+
 
     func didTapResetConfig() {
         self.settings = PaymentSheetTestPlaygroundSettings.defaultValues()

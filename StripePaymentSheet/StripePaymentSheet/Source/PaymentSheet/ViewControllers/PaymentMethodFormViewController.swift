@@ -161,6 +161,9 @@ extension PaymentMethodFormViewController: ElementDelegate {
 
     func didUpdate(element: Element) {
         analyticsHelper.logFormInteracted(paymentMethodTypeIdentifier: paymentMethodType.identifier)
+        NotificationCenter.default.post(name: .mobilePaymentElement,
+                                        object: MobilePaymentElementEvent(eventName: "didInteractWithForm",
+                                                                          metadata: ["paymentMethodType": paymentMethodType.identifier ]))
         delegate?.didUpdate(self)
         animateHeightChange()
     }

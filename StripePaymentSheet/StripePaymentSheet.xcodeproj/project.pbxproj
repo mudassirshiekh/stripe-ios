@@ -131,6 +131,7 @@
 		6B28A6B92BE9712500B47DBF /* CustomerSessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28A6B82BE9712500B47DBF /* CustomerSessionAdapter.swift */; };
 		6B31B9B82B9019730064E210 /* ElementsCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B31B9B72B9019730064E210 /* ElementsCustomer.swift */; };
 		6B31B9BA2B90FCE60064E210 /* CustomerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B31B9B92B90FCE60064E210 /* CustomerSession.swift */; };
+		6B3CDE272C812656000D60BB /* PaymentSheet+NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3CDE262C812656000D60BB /* PaymentSheet+NSNotification.swift */; };
 		6B50BCEE2C29EE1F009702FB /* SavedPaymentOptionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BCED2C29EE1F009702FB /* SavedPaymentOptionsViewControllerTests.swift */; };
 		6B50BCF02C29F888009702FB /* CustomerSavedPaymentMethodsCollectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50BCEF2C29F888009702FB /* CustomerSavedPaymentMethodsCollectionViewControllerTests.swift */; };
 		6B76DBD12C530B6C0037CD63 /* PaymentSheetGDPRConfirmFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B76DBD02C530B6C0037CD63 /* PaymentSheetGDPRConfirmFlowTests.swift */; };
@@ -475,6 +476,7 @@
 		6B28A6B82BE9712500B47DBF /* CustomerSessionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSessionAdapter.swift; sourceTree = "<group>"; };
 		6B31B9B72B9019730064E210 /* ElementsCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsCustomer.swift; sourceTree = "<group>"; };
 		6B31B9B92B90FCE60064E210 /* CustomerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSession.swift; sourceTree = "<group>"; };
+		6B3CDE262C812656000D60BB /* PaymentSheet+NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentSheet+NSNotification.swift"; sourceTree = "<group>"; };
 		6B50BCED2C29EE1F009702FB /* SavedPaymentOptionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPaymentOptionsViewControllerTests.swift; sourceTree = "<group>"; };
 		6B50BCEF2C29F888009702FB /* CustomerSavedPaymentMethodsCollectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSavedPaymentMethodsCollectionViewControllerTests.swift; sourceTree = "<group>"; };
 		6B680A2FF197F612D065F16C /* PaymentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSheet.swift; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 				5CD1A451B238C1D1ADAA72EC /* PaymentSheet+API.swift */,
 				0D447E18D1066195679B7956 /* PaymentSheet+DeferredAPI.swift */,
 				BBB6BEFBCE1116B85B564574 /* PaymentSheet+PaymentMethodAvailability.swift */,
+				6B3CDE262C812656000D60BB /* PaymentSheet+NSNotification.swift */,
 				B9A9FDAE66ADA08D85D74E19 /* PaymentSheet+SwiftUI.swift */,
 				B61FFE76D0960C7F1E34B405 /* PaymentSheetAppearance.swift */,
 				C46CB5AB992F8EEFE4E5460A /* PaymentSheetConfiguration.swift */,
@@ -1876,6 +1879,7 @@
 				2E4C37C73AD202C8A3DD2E4E /* LoadingViewController.swift in Sources */,
 				A8ECBDF889E258F03B86BC2E /* PaymentSheetFlowControllerViewController.swift in Sources */,
 				247A8FEE5184E5976720599E /* PaymentSheetViewController.swift in Sources */,
+				6B3CDE272C812656000D60BB /* PaymentSheet+NSNotification.swift in Sources */,
 				6B31B9BA2B90FCE60064E210 /* CustomerSession.swift in Sources */,
 				4DDECA1F7EC6B624C00D549E /* PollingViewController.swift in Sources */,
 				59BE39C4C3992DBB6A698390 /* PollingViewModel.swift in Sources */,
