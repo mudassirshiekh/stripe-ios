@@ -51,7 +51,7 @@ struct ExampleSwiftUICustomPaymentFlow: View {
 }
 
 class MyCustomBackendModel: ObservableObject {
-    let backendCheckoutUrl = URL(string: "https://stripe-mobile-payment-sheet.glitch.me/checkout")!  // An example backend endpoint
+    let backendCheckoutUrl = URL(string: "https://wobbly-pretty-sovereign.glitch.me/checkout")!  // An example backend endpoint
     @Published var paymentSheetFlowController: PaymentSheet.FlowController?
     @Published var paymentResult: PaymentSheetResult?
 
