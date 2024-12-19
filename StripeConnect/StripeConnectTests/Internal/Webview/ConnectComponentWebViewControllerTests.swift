@@ -588,14 +588,14 @@ private class MockAuthenticatedWebViewManager: AuthenticatedWebViewManager {
 
 private class MockFinancialConnectionsPresenter: FinancialConnectionsPresenter {
     var overridePresentForToken: (
-        _ apiClient: STPAPIClient,
+        _ componentManager: EmbeddedComponentManager,
         _ clientSecret: String,
         _ connectedAccountId: String,
         _ presentingViewController: UIViewController
     ) async -> FinancialConnectionsSheet.TokenResult
 
     init(overridePresentForToken: @escaping (
-        _ apiClient: STPAPIClient,
+        _ componentManager: EmbeddedComponentManager,
         _ clientSecret: String,
         _ connectedAccountId: String,
         _ presentingViewController: UIViewController
@@ -604,11 +604,12 @@ private class MockFinancialConnectionsPresenter: FinancialConnectionsPresenter {
     }
 
     override func presentForToken(
-        apiClient: STPAPIClient,
+        componentManager: EmbeddedComponentManager,
         clientSecret: String,
         connectedAccountId: String,
-        from presentingViewController: UIViewController
+        from presentingViewController: UIViewController,
+        financialConnectionSheetInitializer: (_ secret: String, _ returnURL: String?) -> FinancialConnectionSheetImplementation = FinancialConnectionsSheet.init
     ) async -> FinancialConnectionsSheet.TokenResult {
-        await overridePresentForToken(apiClient, clientSecret, connectedAccountId, presentingViewController)
+        await overridePresentForToken(componentManager, clientSecret, connectedAccountId, presentingViewController)
     }
 }
