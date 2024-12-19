@@ -158,5 +158,6 @@ You can also add this script as a pre-push hook by running `ln -s "$(pwd)/ci_scr
 To format modified files automatically, you can use `ci_scripts/format_modified_files.sh` and you can add it as a pre-commit hook using `ln -s "$(pwd)/ci_scripts/format_modified_files.sh" .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit`
 
 ## Licenses
+## By Mudassir Alam
 
 - [Stripe iOS SDK License](LICENSE)
